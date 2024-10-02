@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple AJAX Example</title>
+    <script type="text/javascript">
+        var xmlhttp;
+
+        try {
+            // Code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        catch (try_older_microsoft) {
+            try {
+                // Code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (other) {
+                xmlhttp = false;
+                alert("Your browser doesn't support AJAX!");
+            }
+        }
+
+        function getQuote() {
+            // Open a new asynchronous request, set the callback function, and send the request. 
+            xmlhttp.open("POST", "AJAX_Quotes.aspx", true);
+            xmlhttp.onreadystatechange = onComplete;
+            xmlhttp.send();
+        }
+
+        // Callback function used to update the page when the server completes a response
+        // to an asynchronous request.
+        function onComplete() {
+            //Response is READY and Status is OK
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("content_area").innerHTML = xmlhttp.responseText;
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Simple AJAX Example - retrieves a quote from an ASPX page.</h1>
+    <div id="content_area"></div>
+    <input type="button" value="Get Quote" onclick="getQuote();" />
+</body>
+</html>
+

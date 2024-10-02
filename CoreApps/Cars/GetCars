@@ -1,0 +1,324 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Car Inventory</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <h1>Car Display Page - Weakly Typed View</h1>
+    <h5>
+        This example demonstrates using a Weakly-Typed View to display a collection of Cars.
+        The controller passes the collection of Car objects to this View using the ViewBag.
+        
+        This View is considered a Weakly-Typed View because it doesn't have a Model class
+        assigned to it. Views that do not have a Model class assigned to it can only retrieve data
+        from the Controller using the ViewData/ViewBag collection.
+        
+        This View uses two separate Controller methods to handle the processing of this page.
+        The Controller's "GetCars" method is used to query the database, create a collection of Cars,
+        and store the collection of Cars in the ViewBag that is used in generating the HTML content for this page
+        before it is delivered to the client.
+        
+        The View also uses the Controller's "SearchCarsByMake" method to process the HTML form that is used
+        to perform a search based on the user input for make. The form uses HTTP Post to submit the
+        form data to the Controller's method.      
+    </h5>
+    <br />
+    <br />
+
+    <form method="POST" action="/users/pascucci/cis3342/CoreApps/Cars/SearchCarsByMake">
+        <input id="searchKey" name="searchKey" type="text" />
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="Search" />
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Nbj_yFII29EpKzrjrMoygizgMtTtzVCiDzsSOQaNpWYgUG_4osAAAx1uQomfo7Y5pQXClf8mcrbRzDmkxaMjDubHMI7Jxu6sdD-A959vJkBRRXZwlcQ5pdITfu3RyLmoF9cAM55DQcPLY3M4Sn1wIY" /></form>
+
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Make:</th>
+                <th>Model:</th>
+                <th>Year:</th>
+                <th>Value:</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>
+                        Audi
+                    </td>
+                    <td>
+                        Q7
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $68,500.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        BMW
+                    </td>
+                    <td>
+                        535xi
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $56,750.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        BMW
+                    </td>
+                    <td>
+                        740i
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $110,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Chevy
+                    </td>
+                    <td>
+                        Camaro
+                    </td>
+                    <td>
+                        2020
+                    </td>
+                    <td>
+                        $35,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Chevy
+                    </td>
+                    <td>
+                        Suburban
+                    </td>
+                    <td>
+                        2022
+                    </td>
+                    <td>
+                        $18,799.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Dodge
+                    </td>
+                    <td>
+                        Charger Hellcat
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $58,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Ford
+                    </td>
+                    <td>
+                        Mustang
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $44,870.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Ford
+                    </td>
+                    <td>
+                        Explorer
+                    </td>
+                    <td>
+                        1994
+                    </td>
+                    <td>
+                        $2,500.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Ford
+                    </td>
+                    <td>
+                        Explorer
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $38,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        GM
+                    </td>
+                    <td>
+                        Yukon
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $35,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Cadillac
+                    </td>
+                    <td>
+                        Escalade
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $85,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        C300
+                    </td>
+                    <td>
+                        2015
+                    </td>
+                    <td>
+                        $18,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        S550 Maybach
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $250,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        S550
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $100,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        GLE350
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $90,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        C300
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $52,750.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        GLS450
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $135,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        GLE350
+                    </td>
+                    <td>
+                        2020
+                    </td>
+                    <td>
+                        $60,000.00
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        Tesla
+                    </td>
+                    <td>
+                        S-Type
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $89,999.00
+                    </td>                   
+                </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>.NET Core 2.0 WebAPI JavaScript AJAX Client</title>
+    <style>
+        div {
+            color: darkblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        This example uses JavaScript and AJAX to work with a .NET Core 2.0 Web Service.
+        The Web Service contains methods that demonstrate passing a user-defined object and an array of objects as input to a Web Method, and
+        Web Methods that return user-defined objects and an array of objects.
+        an array of objects.
+    </h2>
+
+    Enter the TeamID to find: 
+    <input id="txtTeamID" type="text" />
+    <br />
+    <input id="btnFindTeam" value="Find Team by ID" type="button" />
+    <input id="btnGetAllTeams" value="Get All Teams" type="button" />
+    <br /><br />
+
+    <table>
+        <tr>
+            <td>Enter the team's name: </td>
+            <td><input id="txtTeamName" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Enter the team's university: </td>
+            <td><input id="txtUniversity" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Enter the team's mascot: </td>
+            <td><input id="txtMascot" type="text" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input id="btnStoreTeam" value="Store Team" type="button" />
+            </td>
+        </tr>
+    </table>
+
+    <br />
+    <div id="display"></div>
+    <br />
+
+    <script>
+        // Runs when the DOM is ready.
+        window.onload = function () {
+            document.getElementById("btnFindTeam").onclick = function () {
+                // Create the XHR object used to handle the AJAX request/response
+                var request = new XMLHttpRequest();
+                var teamID = document.getElementById("txtTeamID").value;
+
+                // Setup the request
+                request.open("GET", "http://cis-iis2.temple.edu/users/pascucci/CIS3342/CoreWebAPI/api/teams/" + teamID, true);
+                request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+                request.onreadystatechange = function () {  // set the callback function
+                    // Update the page when the response has been completely received and the status is OK
+                    if (request.readyState == 4 && request.status == 200) {
+                        // Convert the JSON string to a JavaScript object
+                        var team = JSON.parse(request.responseText);
+
+                        document.getElementById("display").innerHTML = "Team Data: <br />" +
+                            "university = " + team.University + ", " +
+                            "name = " + team.Name + ", " +
+                            "mascot = " + team.Mascot;
+                    }
+                }
+
+                request.send();
+            };
+
+            document.getElementById("btnGetAllTeams").onclick = function () {
+                // Create the XHR object used to handle the AJAX request/response
+                var request = new XMLHttpRequest();
+
+                // Setup the request
+                request.open("GET", "http://cis-iis2.temple.edu/users/pascucci/CIS3342/CoreWebAPI/api/teams/", true);
+                request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+                request.onreadystatechange = function () {  // set the callback function
+                    // Update the page when the response has been completely received and the status is OK
+                    if (request.readyState == 4 && request.status == 200) {
+                        // Convert the JSON string to a JavaScript object
+                        var teams = JSON.parse(request.responseText);
+                        var str = "Team Data: <br />";
+
+                        for (var i = 0; i < teams.length; i++) {
+                            var team = teams[i];
+                            str = str + "university = " + team.University + ", " +
+                                  "name = " + team.Name + ", " +
+                                  "mascot = " + team.Mascot + "<br />";
+                        }
+
+                        document.getElementById("display").innerHTML = str;
+                    }
+                }
+
+                request.send();
+            };
+
+            document.getElementById("btnStoreTeam").onclick = function () {
+                var request = new XMLHttpRequest();
+
+                // Create the object to send to the WebAPI as input
+                var team = new Object();
+                team.Name = document.getElementById("txtTeamName").value;
+                team.University = document.getElementById("txtUniversity").value;
+                team.Mascot = document.getElementById("txtMascot").value;
+
+                // Convert the object to a JSON string
+                var strInput = JSON.stringify(team);
+
+                // Setup the request
+                request.open("POST", "http://cis-iis2.temple.edu/users/pascucci/CIS3342/CoreWebAPI/api/teams/", true);
+                request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+                request.onreadystatechange = function () {  // set the callback function
+           
+                    // Update the page when the response has been completely received and the status is OK
+                    if (request.readyState == 4 && request.status == 200) {
+                        var result = request.responseText;
+
+                        if (result == "true")
+                            document.getElementById("display").innerHTML = "The record was successfully added to the database.";
+                        else
+                            document.getElementById("display").innerHTML = "The record was not added to the database. Try again later.";
+                    }
+                }
+
+                request.send(strInput);
+            };
+
+        }; // end of window.onload eventhandler
+
+    </script>
+
+</body>
+</html>

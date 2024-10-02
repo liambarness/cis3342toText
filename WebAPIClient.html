@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>.NET Core 2.0 WebAPI JQuery Client</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <h2>
+        This example uses JQuery AJAX to work with a .NET Core 2.0 Web Service.
+        The Web Service contains methods that demonstrate passing a user-defined object and an array of objects as input to a Web Method, and
+        Web Methods that return user-defined objects and an array of objects.
+        an array of objects.
+    </h2>
+
+    Enter the TeamID to find: 
+    <input id="txtTeamID" type="text" />
+    <br />
+    <input id="btnFindTeam" value="Find Team by ID" type="button" />
+    <input id="btnGetAllTeams" value="Get All Teams" type="button" />
+    <br /><br />
+
+    <table>
+        <tr>
+            <td>Enter the team's name: </td>
+            <td><input id="txtTeamName" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Enter the team's university: </td>
+            <td><input id="txtUniversity" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Enter the team's mascot: </td>
+            <td><input id="txtMascot" type="text" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input id="btnStoreTeam" value="Store Team" type="button" />
+            </td>
+        </tr>
+    </table>
+
+    <div id="display"></div>
+    <br />
+
+    <script>
+        // Runs when the DOM is ready.
+        $(document).ready(function () {
+
+            $("#btnFindTeam").click(function () {
+                var strURL = "http://cis-iis2.temple.edu/users/pascucci/CIS3342/CoreWebAPI/api/teams/";    // URL of the Web Service followed by the name of the Web Method.
+                var param = $("#txtTeamID").val();
+
+                // Clear the divs contents.
+                $("#display").html("");
+
+                // Make an AJAX request to get a team and display the response in the appropriate div.
+                $.ajax({
+                    type: "GET",
+                    url: strURL + param,
+                    contentType: "application/json; charset=utf-8", // set the data type sent to the Web Service.
+                    dataType: "json",                               // set the data type expected from the Web Service.
+                    success: function (data) {                      // set callback function used to update the page.
+                        var team = data;
+                        $("#display").html("<br><br>" +
+                            "Team Data: <br>" +
+                            "university = " + team.University + ", name = " + team.Name + ", mascot = " + team.Mascot);
+                    },
+                    error: function (req, status, error) {          // sets the error callback function used when an error occurs.
+                        alert("Error: " + req.responseText + " | " + status + " | " + error);
+                    }
+
+                }); //end of ajax method
+            }); // end of btnGetTeam click event
+
+            $("#btnGetAllTeams").click(function () {
+                var strURL = "http://cis-iis2.temple.edu/users/pascucci/CIS3342/CoreWebAPI/api/teams/";    // URL of the Web Service followed by the name of the Web Method.
+
+                // Clear the divs contents.
+                $("#display").html("");
+
+                // Make an AJAX request to get a team and display the response in the appropriate div.
+                $.ajax({
+                    type: "GET",
+                    url: strURL,
+                    contentType: "application/json; charset=utf-8", // set the data type sent to the Web Service.
+                    dataType: "json",                               // set the data type expected from the Web Service.
+                    //data: "{}",                                     // send an empty JSON object (no input required).
+                    success: function (data) {                      // set callback function used to update the page.
+                        var teams = data;
+                        $.each(teams, function (index, team) {
+                            $("#display").append("<p>".concat("Team: ", team.Name, "<br>University: ", team.University, "<br>Mascot: ", team.Mascot, "</p>"));
+                        });
+                    },
+                    error: function (req, status, error) {          // sets the error callback function used when an error occurs.
+                        alert("Error: " + req.responseText + " | " + status + " | " + error);
+                    }
+
+                }); //end of ajax method
+            }); // end of btnGetAllTeams click event
+
+            $("#btnStoreTeam").click(function () {
+                var strURL = "http://cis-iis2.temple.edu/users/pascucci/CIS3342/CoreWebAPI/api/teams/";    // URL of the Web Service followed by the name of the Web Method.
+
+                // Clear the divs contents.
+                $("#display").html("");
+
+                var team = new Object();
+                team.Name = $("#txtTeamName").val();
+                team.University = $("#txtUniversity").val();
+                team.Mascot = $("#txtMascot").val();
+
+                var strInput = JSON.stringify(team);
+
+                //var inputParametersObject = new Object();
+               // inputParametersObject.theTeam = team;           // the property 'theTeam' is the name or the parameter expected by the Web Method.
+
+                //var strInput = JSON.stringify(inputParametersObject);
+                //var strInput = JSON.stringify({theTeam:team}); //alternative method - doesn't require creating the object to store the parameter.
+
+                // Make an AJAX request to get a team and display the response in the appropriate div.
+                $.ajax({
+                    type: "POST",
+                    url: strURL,
+                    contentType: "application/json", // set the data type sent to the Web Service.
+                    dataType: "json",                               // set the data type expected from the Web Service.
+                    data: strInput,                                 // send an empty JSON object (no input required).
+                    success: function (data) {                      // set callback function used to update the page/
+                        var result = data;
+
+                        if (result == true)
+                            $("#display").text("The record was successfully added to the database.");
+                        else
+                            $("#display").text("The record was not added to the database. Try again later.");
+                    },
+                    error: function (req, status, error) {          // sets the error callback function used when an error occurs.
+                        alert("Error: " + req.responseText + " | " + status + " | " + error);
+                    }
+
+                }); //end of ajax method
+            }); // end of btnStoreTeam click event
+        }); // end of ready method
+    </script>
+
+</body>
+</html>

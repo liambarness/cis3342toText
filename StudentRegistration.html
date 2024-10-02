@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h3>This example demonstrates the use of an ASPX dynamic server-page to process a form on a simple HTML page.  </h3>
+
+    <form method="post" action="RegistrationProcessor.aspx">
+        <table>
+            <tr>
+                <td>Enter your name: </td>
+                <td>
+                    <input type="text" id="txtStudentName" name="txtStudentName" />
+                </td>
+            </tr>
+            <tr>
+                <td>What major you are interested in? </td>
+                <td>
+                    <select id="ddlMajor" name="ddlMajor">
+                        <option value="CIS">Computer &amp; Information Science</option>
+                        <option value="BUS">Business</option>
+                        <option value="DS">Data Science</option>
+                        <option value="EDU">Education</option>
+                        <option value="IST">Information Science &amp; Technology</option>
+                        <option value="MAT">Math</option>
+                        <option value="NADA">I plan to just take up space.</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Which campus are you interested in taking classes?</td>
+                <td>
+                    <input type="radio" id="optCampus" name="optCampus" value="Main" /> Temple Main Campus
+                    <br />
+                    <input type="radio" id="optCampus" name="optCampus" value="TUCC" /> Temple Center City Campus
+                    <br />
+                    <input type="radio" id="optCampus" name="optCampus" value="Ambler" /> Temple Ambler Campus
+                    <br />
+                    <input type="radio" id="optCampus" name="optCampus" value="TU Rome" /> Temple Rome Campus
+                    <br />
+                    <input type="radio" id="optCampus" name="optCampus" value="TU Tokyo" /> Temple Tokyo Campus
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Check here if you plan to enroll fulltime.
+                    <input type="checkbox" id="chkFulltime" name="chkFulltime" value="full-time" />
+                </td>
+                <td>                   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit Registration" />
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

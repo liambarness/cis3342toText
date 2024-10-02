@@ -1,0 +1,81 @@
+
+<html>
+<head>
+    <title>Add New Car</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <h1>Form Demo - Add New Car</h1>
+    <h5>
+        This example demonstrates processing a simple HTML form in a Weakly-Typed View without a Model. The form controls use the name and id attributes
+        that the Model Binder component will map to the CarsController's method input parameters. The names and ids must exactly match
+        the Controller method's input parameters.
+        
+        This View uses two separate Controller methods to handle the processing of this page. The Controller contains
+        two overloaded "SaveCar" methods where one method is used to deliver the View for user input and the other is used to process the form.
+        The Controller's "SaveCar()" method is used to deliver this View to the client to gather user input for the new car.
+        This Controller method passes a Car object used as the Model for the View.
+        
+        The View uses the Controller's "SaveCar(vin, make, model, year, color, value, imageUrl)" method to process the HTML form.
+        The form controls are bound to the input parameters based on the name and id property. The form uses HTTP Post to
+        submit the form data to the Controller's method.
+    </h5>
+    <br />
+    <br />
+    <div class="container">
+        <h4>Car Information:</h4>
+        <hr />
+
+        <form action="SaveCar/" method="POST">
+            <div class="form-group">
+                <label class="form-label"> VIN: </label> 
+                <input id="vin" name="vin" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class ="form-label"> Make: </label>
+                <input id="make" name="make" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label"> Model: </label>
+                <input id="model" name="model" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label"> Year: </label>
+                <input id="year" name="year" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label"> Color: </label>
+                <input id="color" name="color" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label"> Value: </label>
+                <input id="value" name="value" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label"> Car Image (Url): </label>
+                <input id="imageUrl" name="imageUrl" type="text" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" id="btnSubmit" name="btnSubmit" value="Add Car to Inventory" class="btn btn-primary"/>
+            </div>
+        </form>
+
+        <hr />
+
+        <div class="container">
+            
+            <br />
+
+            <a href="Cars/">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+    <title>Add New Car</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <h1>Form Demo - Add New Car</h1>
+    <h5>
+        This example demonstrates processing a form using Strongly-Typed View that uses a Car Model object attached to the View.
+        It also uses HTML tag helpers to help write the HTML for the page.
+        
+        This View uses two separate Controller methods to handle the processing of this page. The Controller contains
+        two overloaded "AddCar" methods where one method is used to deliver the View for user input and the other is used to process the form.
+        The Controller's "AddCar()" method is used to deliver this View to the client to gather user input for the new car.
+        This Controller method passes a Car object used as the Model for the View.
+        
+        The View uses the Controller's "AddCar(Car)" method to process the HTML form. The form controls are bound to
+        the public properties of the Car Model object. The form uses HTTP Post to submit the form data to the Controller's method.
+    </h5>
+    <br />
+    <br />
+    <div class="container">
+        <h4>Car Information:</h4>
+        <hr />
+
+        <form method="POST" action="/users/pascucci/cis3342/CoreApps/Cars/AddCar">
+            
+            <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>
+
+            <div class="form-group">
+                <label class="form-label" for="VIN">VIN</label> 
+                <input class="form-control" type="text" data-val="true" data-val-required="VIN cannot be blank." id="VIN" name="VIN" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="VIN" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Make">Make</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="Make cannot be blank." id="Make" name="Make" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Make" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Model">Model</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="Model cannot be blank." id="Model" name="Model" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Model" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Year">Year</label>
+                <input class="form-control" type="number" data-val="true" data-val-required="Year cannot be blank." id="Year" name="Year" value="2024" /><input name="__Invariant" type="hidden" value="Year" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Year" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Color">Color</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="Color cannot be blank." id="Color" name="Color" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Color" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Value">Value</label>
+                <input class="form-control" type="text" data-val="true" data-val-number="The field Value must be a number." data-val-regex="The field Value must match the regular expression &#x27;^\$?\d&#x2B;(\.(\d{2}))?$&#x27;." data-val-regex-pattern="^\$?\d&#x2B;(\.(\d{2}))?$" data-val-required="Value must be a valid money amount." id="Value" name="Value" value="0" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Value" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Car Image (URL):</label>
+                <input class="form-control" type="text" data-val="true" data-val-required="The ImageUrl field is required." id="ImageUrl" name="ImageUrl" value="" />
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" id="btnSubmit" name="btnSubmit" value="Add Car to Inventory" class="btn btn-primary"/>
+            </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Nbj_yFII29EpKzrjrMoygjMnIS0WzWJOFKEM8xydXV2YvuMpmavEpcGdvNR_eOMW4CW_ZRx2rXdpvov7rtoyCZ_QeOp0ODoYi8SS6wxhRD641em8dA7xEB1GHEEy_rviwAur_M8ST0G4Lx14uaYHnI" /></form>
+
+        <hr />
+
+        <div class="container">
+            
+            <br />
+            <a href="/users/pascucci/cis3342/CoreApps/Cars">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

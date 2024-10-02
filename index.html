@@ -1,0 +1,1069 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS3342: Server-Side Web Application Development - Class Examples</title>
+
+    <link rel="stylesheet" type="text/css" href="table.css"/>
+</head>
+<body>
+
+   <h2>CIS3342: Server-Side Web Application Development - Class Examples</h2>
+   
+   <table id="table-style1">
+       <thead>
+       </thead>
+       <th> Topic/Name </th>
+       <th> Description </th>
+       <th> Code Links </th>
+       </thead>
+       <tr>
+           <td colspan="2"><h3>Form Controls (WFC & HFC) Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>HTML Form Controls Example:</td>
+           <td>
+               This example demonstrates the use of an HTML Form Control to submit a form for server-side processing,
+               and it shows the ability to perform client-side validation, which can stop the form submission process.
+           </td>
+           <td>
+               <a href="HFCExample.aspx" target="_blank">Demo </a> <br />
+               <a href="HFCExample.htm" target="_blank">ASPX Code </a> <br />
+               <a href="HFCExample_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASP.NET WebForm Controls Example:</td>
+           <td> This example demonstrates a simple ASP.NET Web Form Control used to submit a form for server-side processing.</td>
+           <td>
+               <a href="WFCExample.aspx" target="_blank">Demo </a> <br />
+               <a href="WFCExample.htm" target="_blank">ASPX Code </a> <br />
+               <a href="WFCExample_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Controls Example 1:</td>
+           <td> This example demonstrates the use of a WFC button that executes server-side code and two HFC buttons that execute client-side code.</td>
+           <td>
+               <a href="ControlsExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="ControlsExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ControlsExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Controls Example 2:</td>
+           <td>
+               This example demonstrates the use of two HFC buttons that can submit a form that gets processed on the server-side.
+               The server-side code cannot determine which HFC button submitted the form without extra code.
+               When an HFC button is clicked, a JavaScript function sets a hidden field control's value corresponding to the button that was clicked,
+               which the server-side code can use to determine the correct action to perform.
+           </td>
+           <td>
+               <a href="ControlsExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="ControlsExample2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ControlsExample2_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Controls Example 3:</td>
+           <td>
+               This example demonstrates the ability to perform client-side validation before submitting the form for server-side processing.
+               By default, a WFC button always submits a form for server-side processing, but JavaScript can be used to do client-side processing
+               and stop the form submission process when necessary.
+           </td>
+           <td>
+               <a href="ControlsExample3.aspx" target="_blank">Demo </a> <br />
+               <a href="ControlsExample3.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ControlsExample3_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Controls Example 4:</td>
+           <td>
+               This example demonstrates the ability to add HTML control events to a Web Form Control.
+               By default, a Web Form Control doesn't have the onkeypress event that a normal HTML control has.
+               This example shows how to add the event on the server-side and use it on the client-side.
+           </td>
+           <td>
+               <a href="ControlsExample4.aspx" target="_blank">Demo </a> <br />
+               <a href="ControlsExample4.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ControlsExample4_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Request & Response Objects Example:</td>
+           <td>
+               This example demonstrates the use of the Request object to retrieve data from HTML controls. The Response object is used to write data back to the client.
+               The Request object contains data sent to the server in an HTTP Request, which includes the form's data. The Response object is used to store data in the HTTP Response
+               that is sent back to the client. The example also shows how to submit the form for server-side processing from an HTML Form Control converted to a WFC with runat=server.
+           </td>
+           <td>
+               <a href="RequestResponseObjects.aspx" target="_blank">Demo </a> <br />
+               <a href="RequestResponseObjects.htm" target="_blank">ASPX Code </a> <br />
+               <a href="RequestResponseObjects_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>HTML Form Processed by an ASPX Page Example:</td>
+           <td>
+               This example demonstrates how to process a form in an HTML page using an ASPX dynamic server-page.
+           </td>
+           <td>
+               <a href="StudentRegistration.html" target="_blank">Demo </a> <br />
+               <a href="RegistrationProcessor.htm" target="_blank">ASPX Code </a> <br />
+               <a href="RegistrationProcessor_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Single-File Code Model (No CodeBehind) Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>No CodeBehind Example 1:</td>
+           <td>
+               This example demonstrates the single-page model where server-side code and ASP/HTML mark-up code are intertwined.
+               This model is stilled used by classic ASP, JSP, and PHP pages. It page doesn't use a CodeBehind.
+           </td>
+           <td>
+               <a href="Example1.aspx" target="_blank">Demo </a> <br />
+               <a href="Example1.htm" target="_blank">ASPX Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>No CodeBehind Example 2:</td>
+           <td>
+               This example mixes server-side processing and client-side processing without a CodeBehind.
+               One WFC button causes the form to submit for server-side processing. The other HFC button causes client-side processing.
+           </td>
+           <td>
+               <a href="Example2.aspx" target="_blank">Demo </a> <br />
+               <a href="Example2.htm" target="_blank">ASPX Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>No CodeBehind Example 3:</td>
+           <td>
+               This example is the same as the previous example except that it counts and displays the number of times a button was clicked.
+               The WFC button handles this with server-side code while the HFC handles this with client-side code.
+           </td>
+           <td>
+               <a href="Example3.aspx" target="_blank">Demo </a> <br />
+               <a href="Example3.htm" target="_blank">ASPX Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Capitals Game with No CodeBehind:</td>
+           <td> This Web application allows you to play a guessing game with the State Capitols. It doesn't use a CodeBehind. </td>
+           <td>
+               <a href="CapitalsGame.aspx" target="_blank">Demo </a> <br />
+               <a href="CapitalsGame.htm" target="_blank">ASPX Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Capitals Game with CodeBehind:</td>
+           <td>
+               This Web application allows you to play a guessing game with the State Capitols.
+               It separates the ASP/HTML mark-up from the server-side code using a CodeBehind.
+           </td>
+           <td>
+               <a href="CapitalsGame_CB.aspx" target="_blank">Demo </a> <br />
+               <a href="CapitalsGame_CB.htm" target="_blank">ASPX Code </a> <br />
+               <a href="CapitalsGame_CB_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>GridView Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>GridView Example 1:</td>
+           <td>
+               This example demonstrates dynamic data display using a GridView control bound to data coming from the database.
+               The GridView automatically generates the columns for the grid based on the fields returned by the query.
+           </td>
+           <td>
+               <a href="GridViewExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 2:</td>
+           <td>
+               This example demonstrates dynamic data display using a GridView control bound to data coming from the database.
+               The GridView columns are manually created, not automatically generated like GridView Example 1. It allows the user to
+               select a number of products by placing a check-mark in a CheckBox control and click the Order Products button.
+               The server-side code determines which Checkboxes in the GridView were checked, gets the ProductID associated with the item, and displays a list of ProductIDs for the selected products (rows).
+               The first column is s TemplateField, which allows the programmer to add a control like the CheckBox. The other columns are BoundFields,
+               which are manually bound to specific fields from the query results it displays.
+           </td>
+           <td>
+               <a href="GridViewExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample2_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 3:</td>
+           <td>
+               This example demonstrates the ability to use the GridView control to dynamically display data from the database and modify it.
+               The GridView can handle a number of events that cause server-side code to execute.
+           </td>
+           <td>
+               <a href="GridViewExample3.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample3.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample3_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 4:</td>
+           <td> This examples demonstrates the use of a footer to display information in the footer row of a GridView control. </td>
+           <td>
+               <a href="GridViewExample4.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample4.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample4_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 5:</td>
+           <td> This example demonstrates how to query and sort the data for a GridView to display. </td>
+           <td>
+               <a href="GridViewExample5.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample5.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample5_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 6:</td>
+           <td>
+               This example demonstrates dynamic data display using a GridView control bound to data coming from an ArrayList of Product objects.
+               The GridView automatically generates the columns for the grid based on the public properties of the Product class objects stored in the ArrayList.
+           </td>
+           <td>
+               <a href="GridViewExample6.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample6.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample6_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="Product_class.htm" target="_blank">Product Class Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 7:</td>
+           <td> This example does the same thing as GridView Example 3 except that it manipulates data in an ArrayList instead of a database. </td>
+           <td>
+               <a href="GridViewExample7.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample7.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample7_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="Product_class.htm" target="_blank">Product Class Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 9:</td>
+           <td>
+               This example uses a drop-down list to update a GridView. The drop-down list is bound to data coming from the database.
+               A PostBack is issued each time a new item is selected from the drop-down, which will update the data in the GridView.
+           </td>
+           <td>
+               <a href="GridViewExample9.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample9.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample9_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 10:</td>
+           <td> This example demonstrates merging two datasets into one dataset and displaying the resulting dataset in a GridView. </td>
+           <td>
+               <a href="GridViewExample10.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample10.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample10_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 11:</td>
+           <td> This example demonstrates the GridView's paging feature to display a large number of records using pages. </td>
+           <td>
+               <a href="GridViewExample11.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample11.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample11_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>GridView Example 12:</td>
+           <td>
+               This example demonstrates the ability to store and retrieve key values in the GridView without displaying them in a GridView's column.
+               The GridView's DataKeys collection is used to store each record's primary key (product number).
+           </td>
+           <td>
+               <a href="GridViewExample12.aspx" target="_blank">Demo </a> <br />
+               <a href="GridViewExample12.htm" target="_blank">ASPX Code </a> <br />
+               <a href="GridViewExample12_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Managing & Maintaining State Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Session Example 1:</td>
+           <td> This example demonstrates the use of the Session object to allow data to persist between postbacks and multiple pages of a Web Application. </td>
+           <td>
+               <a href="SessionExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="SessionExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="SessionExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+               <a href="SessionExample1_Results.htm" target="_blank">Results Page ASPX Code </a> <br />
+               <a href="SessionExample1_Results_codebehind.htm" target="_blank">Results Page Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Session Example 2:</td>
+           <td>
+               This example uses the Global.asax page to execute code when a new session begins. When a new session begins, data is retrieved from the database.
+               The data retrieved from the database is stored in the Session object and used by multiple pages instead of making multiple connections to the database.
+           </td>
+           <td>
+               <a href="SessionExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="SessionExample2.htm" target="_blank">ASPX Page 1 Code </a> <br />
+               <a href="SessionExample2_codebehind.htm" target="_blank">Page 1 Codebehind Code </a> <br />
+               <a href="SessionExample2b.htm" target="_blank">ASPX Page 2 Code </a> <br />
+               <a href="SessionExample2b_codebehind.htm" target="_blank">Page 2 Codebehind Code </a> <br />
+               <a href="Global_asax_codebehind.htm" target="_blank">Global.asax Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Application Example 1:</td>
+           <td>
+               This example uses the Application object to store data that can be accessed by separate sessions using the Web Application.
+               The application is a voting machine that stores the votes for all the candidates in the Application object, which each user (session) can view and update
+               the shared data. Data stored in the Application object suffer from concurrency issues.
+               This example shows how to use shared data in a safe way with the Application.Lock() and Application UnLock() methods
+           </td>
+           <td>
+               <a href="ApplicationExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="ApplicationExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ApplicationExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="Global_asax_codebehind.htm" target="_blank">Global.asax Codebehind Code </a> <br />
+               <br />
+               <a href="ApplicationExample1_Results.htm" target="_blank">Results Page ASPX Code </a> <br />
+               <a href="ApplicationExample1_Results_codebehind.htm" target="_blank">Results Page Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Cookies Example:</td>
+           <td> This example demonstrates writing and reading a cookie to save data for a single user between multiple sessions. </td>
+           <td>
+               <a href="CookieExample.aspx" target="_blank">Demo </a> <br />
+               <a href="CookieExample.htm" target="_blank">ASPX Code </a> <br />
+               <a href="CookieExample_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>HTTP QueryString Example:</td>
+           <td>
+               This example demonstrates the use of the HTTP GET method for sending form data in the URL of the HTTP Request,
+               and how to retrieve data from the URL used in server-side processing of the form.
+           </td>
+           <td>
+               <a href="QueryStringExample.aspx" target="_blank">Demo </a> <br />
+               <a href="QueryStringExample.htm" target="_blank">ASPX Code </a> <br />
+               <a href="QueryStringExample_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+               <a href="QueryStringExampleResults.htm" target="_blank">ASPX Code </a> <br />
+               <a href="QueryStringExampleResults_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Dynamic Data Display Examples (without a GridView)</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Dynamic Display Example 1:</td>
+           <td>
+               This example demonstrates dynamic data display without using a GridView control.
+               An HTML table is generated on the server-side with the data retrieved from the database.
+               The dynamically generated HTML string is then inserted into the page using a server-side DIV control.
+           </td>
+           <td>
+               <a href="DynamicDisplay.aspx" target="_blank">Demo </a> <br />
+               <a href="DynamicDisplay.htm" target="_blank">ASPX Code </a> <br />
+               <a href="DynamicDisplay_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Dynamic Display Example 2:</td>
+           <td>
+               This example is a copy of Dynamic Display Example 1 with one addition:
+               it demonstrates how to dynamically create a Textbox to display database data, and how to render it into HTML
+               that gets put into the server-side DIV for display.
+           </td>
+           <td>
+               <a href="DynamicDisplay2.aspx" target="_blank">Demo </a> <br />
+               <a href="DynamicDisplay2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="DynamicDisplay2_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Dynamic Display Example 3:</td>
+           <td>
+               This example is a copy of Dynamic Display Example 2 done in a different method.
+               In the previous examples the HTML was generated manually through code, but this example uses some controls that handle the rendering of the HTML.
+               It uses a PlaceHolder control to insert a table created using an object-oriented approach. The PlaceHolder control is responsible for rendering the objects it contains into HTML.
+               A Table object is created with TableRow and TableCell objects. Some TableCell objects contain database data as text while others contain dynamically created controls like a TextBox and Button.
+               This example also demonstrates how to add a button dynamically and wire an event that can be processed on the server-side.
+           </td>
+           <td>
+               <a href="DynamicDisplay3.aspx" target="_blank">Demo </a> <br />
+               <a href="DynamicDisplay3.htm" target="_blank">ASPX Code </a> <br />
+               <a href="DynamicDisplay3_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Repeater Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Repeater Example 1:</td>
+           <td>
+               This example demonstrates dynamic data display using a Repeater control bound to data coming from the database.
+               The Repeater generates the table-like grid based on the records and fields returned by the query, but it requires manually editing the ASP/HTML mark-up.
+           </td>
+           <td>
+               <a href="RepeaterExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="RepeaterExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="RepeaterExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Repeater Example 2:</td>
+           <td> This example demonstrates dynamic data display using a Repeater control bound to data coming from an ArrayList of Product objects. </td>
+           <td>
+               <a href="RepeaterExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="RepeaterExample2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="RepeaterExample2_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Repeater Example 3:</td>
+           <td>
+               This example is a copy of Repeater Example 1 with one addition: each row in the repeater contains a button that causes a server-side event.
+               All the buttons in the Repeater fire the same event, so this example demonstrates how to determine which button caused the event.
+           </td>
+           <td>
+               <a href="RepeaterExample3.aspx" target="_blank">Demo </a> <br />
+               <a href="RepeaterExample3.htm" target="_blank">ASPX Code </a> <br />
+               <a href="RepeaterExample3_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Database Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Identity Field Example 1:</td>
+           <td>
+               This example demonstrates how to retrieve the primary key field's value (Identity Field) for a field that is automatically handled by the database.
+               This approach is needed when an application needs to know the automatically generated value for a newly added record.
+           </td>
+           <td>
+               <a href="IdentityFieldExample.aspx" target="_blank">Demo </a> <br />
+               <a href="IdentityFieldExample.htm" target="_blank">ASPX Code </a> <br />
+               <a href="IdentityFieldExample_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Stored Procedure Example 1:</td>
+           <td>
+               This example demonstrates the use of Stored Procedures to perform secure operations within a database server.
+               The Stored Procedures used in this example perform SQL SELECT statements to return the results of a query.
+               This example also shows how to pass an input parameter for a Stored Procedure to use in a query.
+           </td>
+           <td>
+               <a href="StoredProcedureExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="StoredProcedureExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="StoredProcedureExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="StoredProcedure1_SQLCode.htm" target="_blank">Stored Procedures Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Stored Procedure Example 2:</td>
+           <td> This example demonstrates the use of Stored Procedures to update data in the database. </td>
+           <td>
+               <a href="StoredProcedureExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="StoredProcedureExample2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="StoredProcedureExample2_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="StoredProcedure2_SQLCode.htm" target="_blank">Stored Procedures Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Stored Procedure Example 3:</td>
+           <td> This example demonstrates the use of Stored Procedure transactions that can roll-back changes when errors are detected. </td>
+           <td>
+               <a href="StoredProcedureExample3.aspx" target="_blank">Demo </a> <br />
+               <a href="StoredProcedureExample3.htm" target="_blank">ASPX Code </a> <br />
+               <a href="StoredProcedureExample3_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="StoredProcedure3_SQLCode.htm" target="_blank">Stored Procedures Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Serialization Example 1:</td>
+           <td>
+               This example demonstrates how to use Serialization to store an application's object as binary data in the database.
+               It also demonstrates how to use Deserialization to recreate the object in memory for the application to use after it's retrieved from the database.
+           </td>
+           <td>
+               <a href="SerializationExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="SerializationExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="SerializationExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <a href="StoredProcedureSerialization1_SQLCode.htm" target="_blank">Stored Procedures Code </a> <br />
+               <a href="CreditCard_class.htm" target="_blank">CreditCard Class Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Working with Images Example - <br />
+               Writing Images to a Database & <br />
+               Retrieving Images from a Database:
+           </td>
+           <td>
+               This example shows how to upload an image file using a FileUpload control, relate it to an existing database record, and store it in the database.
+               It also demonstrates how to retrieve the binary image data from the database and put it into a GridView ImageField through the use of a handler (another ASPX page to process the image data).
+           </td>
+           <td>
+               No Demo Available <br />
+               <a href="ProductImageLoader.htm" target="_blank">Product Loader ASPX Code </a> <br />
+               <a href="ProductImageLoader_codebehind.htm" target="_blank">Product Loader Codebehind Code </a> <br />
+               <a href="ProductImageViewer.htm" target="_blank">Product Viewer ASPX Code </a> <br />
+               <a href="ProductImageViewer_codebehind.htm" target="_blank">Product Viewer Codebehind Code </a> <br />
+               <a href="ProductImageGrab.htm" target="_blank">Product Image Grab (Handler) ASPX Code </a> <br />
+               <a href="ProductImageGrab_codebehind.htm" target="_blank">Product Image Grab (Handler) Codebehind Code </a> <br />
+               <a href="StoredProcedureStoreProductImage_SQLCode.htm" target="_blank">Stored Procedures Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Working with Images Example 2
+           </td>
+           <td>
+               This example shows how to retrieve binary image data from the database and put it into a GridView ImageField using a simpler method.
+           </td>
+           <td>
+               <a href="ProductImageDisplay.aspx" target="_blank">Demo </a> <br />
+               <a href="ProductImageDisplay.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ProductImageDisplay_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Validator Control Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Validators Example 1:</td>
+           <td>
+               This example demonstrates the use of simple validation controls that can validate user input on both the client and server sides.
+               ASP.NET Validation controls perform client-side validation to prevent a round-trip to the server when the input isn't valid.
+               However, the server also performs validation even when the client-side validation was successful;
+               this is necessary because a browser may disable scripting and bypass client-side validation.
+           </td>
+           <td>
+               <a href="ValidatorsExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="ValidatorsExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ValidatorsExample1_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Validators Example 2:</td>
+           <td> This example demonstrates the use of a ValidationSummary control to organize error messages related to a number of validation controls. </td>
+           <td>
+               <a href="ValidatorsExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="ValidatorsExample2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ValidatorsExample2_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Validators Example 3:</td>
+           <td>
+               This example demonstrates validating an ASPX page's data using server-side code before the Page_Load event.
+               It allows the programmer to determine when a page's input is valid.
+           </td>
+           <td>
+               <a href="ValidatorsExample3.aspx" target="_blank">Demo </a> <br />
+               <a href="ValidatorsExample3.htm" target="_blank">ASPX Code </a> <br />
+               <a href="ValidatorsExample3_codebehind.htm" target="_blank">Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Web API & Web Service Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>ASP.NET Core Web API Example:</td>
+           <td>
+               This example shows how to create a RESTful Web API using ASP.NET Core and consume the Web API in different client applications.
+           </td>
+           <td>
+               <a href="TeamsController_codebehind.htm" target="_blank">Web API Code </a> <br />
+               <a href="Team_class.htm" target="_blank">Team Class Code </a> <br /> <br />
+
+               <a href="TeamWebAPI_Example.aspx" target="_blank">ASPX Client Demo </a> <br />
+               <a href="TeamWebAPI_Example.htm" target="_blank">ASPX Client - ASPX Code</a> <br />
+               <a href="TeamWebAPI_Example_codebehind.htm" target="_blank">ASPX Client - Codebehind Code</a> <br /><br />
+
+               <a href="TeamWebAPI_Example2.aspx" target="_blank">ASPX Client Demo 2 </a> <br />
+               <a href="TeamWebAPI_Example2.htm" target="_blank">ASPX Client - ASPX Code</a> <br />
+               <a href="TeamWebAPI_Example2_codebehind.htm" target="_blank">ASPX Client - Codebehind Code</a> <br /><br />
+
+               <a href="WebAPIClient.html" target="_blank"> JQuery Client Demo </a> <br />
+               <a href="WebAPIClient_code.htm" target="_blank"> JQuery Client Code </a> <br /><br />
+
+               <a href="WebAPIClient_v2.html" target="_blank"> JavaScript Client Demo </a> <br />
+               <a href="WebAPIClient_v2_code.htm" target="_blank">JavaScript Client Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASP.NET Core Web API Example:</td>
+           <td>
+               This example demonstrates how to call a RESTful Web API's methods to perform a task.
+               Web API's allow distributing the workload between multiple computers instead of all the server-side code executing on one server.
+           </td>
+           <td>
+               <a href="CalculatorAPIExample.aspx" target="_blank">Demo </a> <br />
+               <a href="CalculatorController_codebehind.htm" target="_blank">Web API Code </a> <br />
+               <a href="CalculatorAPIExample.htm" target="_blank">Web API Client - ASPX Code </a> <br />
+               <a href="CalculatorAPIExample_codebehind.htm" target="_blank">Web API Client - Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASP.NET Core Web API Example:</td>
+           <td>
+               This example demonstrates how to pass user-defined class types (UDT) to a Web API and receive a user-defined type as the return value from Web API.
+               This example also demonstrates how to return a collection from a Web API.
+           </td>
+           <td>
+               <a href="CustomerAPIExample.aspx" target="_blank">Demo </a> <br />
+               <a href="CustomerServiceController_codebehind.htm" target="_blank">Web API Code </a> <br />
+               <a href="Customer_class.htm" target="_blank">Web API - Customer class </a> <br />
+               <a href="CustomerAPIExample.htm" target="_blank">Web API Client - ASPX Code </a> <br />
+               <a href="CustomerAPIExample_codebehind.htm" target="_blank">Web API Client - Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASP.NET Core Web API Example (Session Management):</td>
+           <td>
+               This example demonstrates the use of Session Management to persist data between multiple Web API and Web API Client requests.
+               By default, a Web API doesn't handle the use of Sessions and Session data. This requires enabling Session management through code in the Web API's Startup.cs
+               configuration file and creating a cookie container for the Web Request to store the Session Cookie on the Web API Client (ASPX server-side code).
+           </td>
+           <td>
+               <a href="WebAPISessionExample.aspx" target="_blank">Demo </a> <br />
+               <a href="VoteController_codebehind.htm" target="_blank">Web API - Codebehind Code </a> <br />
+               <a href="WebAPISessionExample.htm" target="_blank">Web API Client - ASPX Code </a> <br />
+               <a href="WebAPISessionExample_codebehind.htm" target="_blank">Web API Client - Codebehind Code </a> <br />
+               <a href="WebAPISessionExample_Results.htm" target="_blank">Web API Client Results Page - ASPX Code </a> <br />
+               <a href="WebAPISessionExample_Results_codebehind.htm" target="_blank">Web API Client Results Page - Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASMX Web Service Example 1:</td>
+           <td>
+               This example is identical to the Web API example that provides a simple calculator service except that it demonstrates how to call an ASMX Web Service to perform the tasks.
+               Web Service's allow distributing the workload between multiple computers instead of all the server-side code executing on one server.
+               The Web Service Proxy object is used to communicate with the Web Service, invoke a Web Method, pass it input, and receive the result.
+           </td>
+           <td>
+               <a href="CalculatorSvcExample.aspx" target="_blank">Demo </a> <br />
+               <a href="CalculatorService_codebehind.htm" target="_blank">Web Service - (ASMX) Codebehind Code </a> <br />
+               <a href="CalculatorSvcExample.htm" target="_blank">Web Service Client - ASPX Code </a> <br />
+               <a href="CalculatorSvcExample_codebehind.htm" target="_blank">Web Service Client - Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASMX Web Service Example 2:</td>
+           <td>
+               This example is identical to the Web API example that provides customer service operations except that it uses an ASMX Web Service to perform the tasks.
+               This example demonstrates how to pass user-defined class types (UDT) to a Web Service Web Method and receive a user-defined type as the return value of Web Method.
+               Sending and receiving user-defined types is a different process than using simple data types like string, int, double, etc...
+               This example also demonstrates how to return an ArrayList from a Web Method.
+           </td>
+           <td>
+               <a href="CustomerSvcExample.aspx" target="_blank">Demo </a> <br />
+               <a href="CustomerService_codebehind.htm" target="_blank">Web Service - (ASMX) Codebehind Code </a> <br />
+               <a href="Customer_class.htm" target="_blank">Web Service - Customer class </a> <br />
+               <a href="CustomerSvcExample.htm" target="_blank">Web Service Client - ASPX Code </a> <br />
+               <a href="CustomerSvcExample_codebehind.htm" target="_blank">Web Service Client - Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>ASMX Web Service Example 3 (Session Management):</td>
+           <td>
+               This example demonstrates the use of Session Management to persist data between multiple Web Service and Web Service Client requests.
+               By default, a Web Service disables the use of Session data. This requires enabling Session management through code in the Web Service and
+               creating a container for the Web Service Proxy object to store the Session Cookie on the Web Service Client (ASPX server-side code).
+           </td>
+           <td>
+               <a href="WebServiceSessionExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="VoteService_codebehind.htm" target="_blank">Web Service - (ASMX) Codebehind Code </a> <br />
+               <a href="WebServiceSessionExample1.htm" target="_blank">Web Service Client - ASPX Code </a> <br />
+               <a href="WebServiceSessionExample1_codebehind.htm" target="_blank">Web Service Client - Codebehind Code </a> <br />
+               <a href="WebServiceSessionExample1_Results.htm" target="_blank">Web Service Client Results Page - ASPX Code </a> <br />
+               <a href="WebServiceSessionExample1_Results_codebehind.htm" target="_blank">Web Service Client Results Page - Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Core MVC Web Application Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Dynamic Data Display Example:</td>
+           <td>
+               This example demonstrates dynamic data display using a Weakly-Typed Razor View. The Controller
+               passes a collection to the View using the ViewBag/ViewData collection, which is used to dynamically
+               generate the content for the View.The example also demonstrates processing a simple search tool that
+               updates the display.
+           </td>
+           <td>
+               <a href="CoreApps/Cars/GetCars" target="_blank">Demo </a> <br />
+               <a href="DisplayCars_View.htm" target="_blank">Razor View Code </a> <br />
+               <a href="DisplayCars_Controller.htm" target="_blank">Controller Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Dynamic Data Display Example 2:</td>
+           <td>
+               This example demonstrates dynamic data display using a Strongly-Typed Razor View. The Controller
+               passes a collection to the View using a Model attached to the View. The View's Model is a collection of Car objects,
+               which is used to dynamically generate the content for the View.The example also demonstrates processing a simple search tool that
+               updates the display.
+           </td>
+           <td>
+               <a href="CoreApps/Cars/DisplayCarInventory" target="_blank">Demo </a> <br />
+               <a href="DisplayCarInventory_View.htm" target="_blank">Razor View Code </a> <br />
+               <a href="DisplayCarInventory_Controller.htm" target="_blank">Controller Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Dynamic Data Display Example 3:</td>
+           <td>
+               This example demonstrates dynamic data display using a Strongly-Typed Razor View to display a single Car's detailed information. The Controller
+               passes a single Car object to the View using a Model attached to the View. The View's Model is a single Car object that is used to
+               dynamically generate the content for the View.The example also demonstrates passing data to the Controller using routing parameters embedded
+               in the URL.
+           </td>
+           <td>
+               <a href="CoreApps/Cars/ViewCarDetails?vin=MB205" target="_blank">Demo </a> <br />
+               <a href="ViewCarDetails_View.htm" target="_blank">Razor View Code </a> <br />
+               <a href="ViewCarDetails_Controller.htm" target="_blank">Controller Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Simple Form Processing Example:</td>
+           <td>
+               This example demonstrates processing a form within a Razor View. The form data
+               is submitted using an HTTP Post to a Core MVC Controller. The controller accesses the form data
+               from the Request.Form["key"] collection.
+           </td>
+           <td>
+               <a href="CoreApps/Financial/" target="_blank">Demo </a> <br />
+               <a href="SimpleInterest_View.htm" target="_blank">Razor View Code </a> <br />
+               <a href="SimpleInterest_Controller.htm" target="_blank">Controller Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Form Processing Example 2:</td>
+           <td>
+               This example demonstrates processing a simple HTML form in a Weakly-Typed View without a Model. The form controls use the name and id attributes
+               that the Model Binder component will map to the CarsController's method input parameters. The names and ids must exactly match
+               the Controller method's input parameters.
+           </td>
+           <td>
+               <a href="CoreApps/Cars/SaveCar" target="_blank">Demo </a> <br />
+               <a href="SaveCar_View.htm" target="_blank">Razor View Code </a> <br />
+               <a href="SaveCar_Controller.htm" target="_blank">Controller Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Form Processing Example 3:</td>
+           <td>
+               This example demonstrates processing a form using Strongly-Typed View that uses a Car Model object attached to the View.
+               It also uses HTML tag helpers to help write the HTML for the page.
+           </td>
+           <td>
+               <a href="CoreApps/Cars/AddCar" target="_blank">Demo </a> <br />
+               <a href="AddCar_View.htm" target="_blank">Razor View Code </a> <br />
+               <a href="AddCar_Controller.htm" target="_blank">Controller Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Customer User Control Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Customer User Control Example 1:</td>
+           <td>
+               This example demonstrates how to use a Custom User Control (ASCX) that displays a records data,
+               and how to dynamically load an instance of this Custom User Control for each record returned by a database query.
+               The Custom User Control exposes properties and methods that can be used from an ASCX page that uses this control.
+           </td>
+           <td>
+               <a href="CustomUserControlExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="CustomUserControlExample1.htm" target="_blank">Page that uses the Custom User Control - ASPX Code </a> <br />
+               <a href="CustomUserControlExample1_codebehind.htm" target="_blank">Page that uses the Custom User Control - Codebehind Code </a> <br />
+               <a href="ProductDisplayControl.htm" target="_blank">Custom User Control - (ASCX) Markup Code </a> <br />
+               <a href="ProductDisplayControl_codebehind.htm" target="_blank">Custom User Control - (ASCX) Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Customer User Control Example 2:</td>
+           <td>
+               This example is a simple example of using a Custom User Control. The previous example dynamically loads the control for the page,
+               but this example demonstrates how to use a single Custom User Control that was manually added to the page in the ASPX mark-up (GUI).
+           </td>
+           <td>
+               <a href="CustomUserControlExample2.aspx" target="_blank">Demo </a> <br />
+               <a href="CustomUserControlExample2.htm" target="_blank">Page that uses the Custom User Control - ASPX Code </a> <br />
+               <a href="CustomUserControlExample2_codebehind.htm" target="_blank">Page that uses the Custom User Control - Codebehind Code </a> <br />
+               <a href="ProductDisplayControl.htm" target="_blank">Custom User Control - (ASCX) Markup Code </a> <br />
+               <a href="ProductDisplayControl_codebehind.htm" target="_blank">Custom User Control - (ASCX) Codebehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Miscellaneous Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Email Example:</td>
+           <td> This example demonstrates how to create an email object and send it using SMTP. </td>
+           <td>
+               <a href="EmailExample.aspx" target="_blank">Demo </a> <br />
+               <a href="EmailExample.htm" target="_blank">ASPX Code </a> <br />
+               <a href="EmailExample_codebehind.htm" target="_blank">CodeBehind Code </a> <br />
+               <a href="Email_class.htm" target="_blank">Email Class Code </a> <br />
+               <a href="Web.config_file.htm" target="_blank">Web.config File Settings for SMTP mail (not needed for this example)</a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Security Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>SSL Secure Connections Example:</td>
+           <td>
+               This example demonstrates how to set-up a secure SSL connection between the browser and Web server.
+               This example also shows how to detect whether or not there is a secure connection when the page loads.
+               The secured page (SecurityDemo.aspx) causes a redirect whenever there isn't a secure connection;
+               thus, it restricts the user from viewing the page until a secure SSL connection has been established.
+               The example will cause a browser security issue that states the certificate is untrusted.
+               The CIS-IIS2 Web server uses a trial testing certificate that is used for testing purposes;
+               it cannot be validated with a certificate authority, which is the reason for the browser security message.
+           </td>
+           <td>
+               <a href="SSLSecurityDemo.aspx" target="_blank">Demo </a> <br />
+               <a href="SSLSecurityDemo.htm" target="_blank">ASPX Code </a> <br />
+               <a href="SSLSecurityDemo_codebehind.htm" target="_blank">CodeBehind Code </a> <br />
+               <a href="SecurityDemo.htm" target="_blank">Secured Page ASPX Code </a> <br />
+               <a href="SecurityDemo_codebehind.htm" target="_blank">Secured Page CodeBehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Symmetric Encryption Example:</td>
+           <td>
+               This example demonstrates how to securely save a password in a cookie that can be used for automatic logins.
+               This example takes the password as plain-text and encrypts it using AES Rijndael's Symmetric Encryption Algorithm,
+               and stores the username and the encrypted password in a cookie. It also demonstrates how to read the password from the cookie and decrypt it.
+           </td>
+           <td>
+               <a href="EncryptionExample1.aspx" target="_blank">Demo </a> <br />
+               <a href="EncryptionExample1.htm" target="_blank">ASPX Code </a> <br />
+               <a href="EncryptionExample1_codebehind.htm" target="_blank">CodeBehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>AJAX Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Simple AJAX Example 1:</td>
+           <td>
+               This example demonstrates the ability to make an asynchronous request from client-side JavaScript to retrieve a quote from the Web server.
+               When the response from the server is received, the client-side script updates the page with the newly retrieved quote.
+           </td>
+           <td>
+               <a href="SimpleAJAXExample1.html" target="_blank">Demo </a> <br />
+               <a href="SimpleAJAXExample1.htm" target="_blank">HTML/JavaScript Code</a> <br />
+               <a href="AJAX_Quotes_codebehind.htm" target="_blank">ASPX CodeBehind Code</a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Simple AJAX Example 1 version 2:</td>
+           <td> This example is the same as Simple AJAX Example 1 except that it uses a try-catch statement to determine the browser's ability to handle AJAX. </td>
+           <td>
+               <a href="SimpleAJAXExample1B.html" target="_blank">Demo </a> <br />
+               <a href="SimpleAJAXExample1B.htm" target="_blank">HTML/JavaScript Code</a> <br />
+               <a href="AJAX_Quotes_codebehind.htm" target="_blank">ASPX CodeBehind Code</a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Simple AJAX Example 2:</td>
+           <td> This example demonstrates the ability to have a simple HTML form processed by an ASPX page using AJAX and the POST method of sending form data. </td>
+           <td>
+               <a href="SimpleAJAXExample2.html" target="_blank">Demo </a> <br />
+               <a href="SimpleAJAXExample2.htm" target="_blank">HTML/JavaScript Code</a> <br />
+               <a href="AJAX_PostProcess_codebehind.htm" target="_blank">ASPX CodeBehind Code</a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Simple AJAX Example 2 version 2:</td>
+           <td> This example demonstrates the ability to have a simple HTML form processed by an ASPX page using AJAX and the GET method of sending form data. </td>
+           <td>
+               <a href="SimpleAJAXExample2B.html" target="_blank">Demo </a> <br />
+               <a href="SimpleAJAXExample2B.htm" target="_blank">HTML/JavaScript Code</a> <br />
+               <a href="AJAX_GetProcess_codebehind.htm" target="_blank">ASPX CodeBehind Code</a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Predictive Fetch Example:</td>
+           <td>
+               This example demonstrates the use of the Predictive Fetch Design Pattern
+               to get the player's statistics before the user clicks a button to display the statistics.
+               The user chooses a player from the drop-down box, which causes a server-side event that displays the appropriate player picture.
+               This is a normal client-server request and response interaction. The predictive fetch occurs after the client-side page load, which
+               makes an AJAX asynchronous request to the server to get the player's statistics before the user clicks the button to show it.
+               The button's click event simply needs to take the pre-fetched, predicted data and place it in a DIV.
+           </td>
+           <td>
+               <a href="PredictiveFetchDemo2.aspx" target="_blank">Demo </a> <br />
+               <a href="PredictiveFetchDemo2.htm" target="_blank">ASPX Code </a> <br />
+               <a href="PredictiveFetchDemo2_codebehind.htm" target="_blank">CodeBehind Code </a> <br />
+               <a href="MLBServiceController_codebehind.htm" target="_blank">MLB Web API - (Core 2.0) CodeBehind Code</a> <br />
+               <br />
+               <a href="PredictiveFetchDemo.aspx" target="_blank">Demo </a> <br />
+               <a href="PredictiveFetchDemo.htm" target="_blank">ASPX Code </a> <br />
+               <a href="PredictiveFetchDemo_codebehind.htm" target="_blank">CodeBehind Code </a> <br />
+               <a href="MLBWebService_codebehind.htm" target="_blank">MLB Web Service - (ASMX) CodeBehind Code</a> <br />
+               <br />
+           </td>
+       </tr>
+       <tr>
+           <td>Submission Throttling Example:</td>
+           <td>
+               This example demonstrates the use of the Submission Throttling Design Pattern
+               that submits the form for processing at certain periodic intervals (every 3 seconds) using AJAX.
+           </td>
+           <td>
+               <a href="SubmissionThrottlingDemo2.aspx" target="_blank">Demo </a> <br />
+               <a href="SubmissionThrottlingDemo2.htm" target="_blank">ASPX Code (No code in CodeBehind)</a> <br />
+               <a href="AJAXWebServiceController_codebehind.htm" target="_blank">Web API - (Core 2.0) CodeBehind Code</a> <br />
+               <br />
+               <a href="SubmissionThrottlingDemo.aspx" target="_blank">Demo </a> <br />
+               <a href="SubmissionThrottlingDemo.htm" target="_blank">ASPX Code (No code in CodeBehind)</a> <br />
+               <a href="AJAXWebService_codebehind.htm" target="_blank">Web Service - (ASMX) CodeBehind Code</a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <tr>
+           <td colspan="2"><h3>Payment Processing Examples</h3></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>Authorize.Net Payment Processing Example:</td>
+           <td>
+               This example demonstrates the use of Authorize.Net as a payment gateway to process a credit-card transaction.
+               This example also demonstrates how to create a Web HTTP Request in server-side code to send the credit card information,
+               and receive a Web HTTP Response from the payment gateway.
+           </td>
+           <td>
+               <a href="PizzaOrder.aspx" target="_blank">Demo </a> <br />
+               <a href="PizzaOrder.htm" target="_blank">ASPX Code </a> <br />
+               <a href="PizzaOrder_codebehind.htm" target="_blank">CodeBehind Code </a> <br />
+               <a href="PaymentDemo.htm" target="_blank">Payment Page ASPX Code </a> <br />
+               <a href="PaymentDemo_codebehind.htm" target="_blank">Payment Page CodeBehind Code </a> <br />
+               <br />
+           </td>
+       </tr>
+
+       <!-- BEGIN COMMENT
+    END COMMENT -->
+
+   </table>
+ 
+</body>
+</html>

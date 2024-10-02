@@ -1,0 +1,468 @@
+
+
+
+<html>
+<head>
+    <title>Car Inventory</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h1>Car Inventory - Strongly Typed View</h1>
+    <h5>
+        This example demonstrates using a Strongly-Typed View to display a collection of Cars.
+        The controller passes the collection of Car objects to this View using the View Model approach.
+        
+        This View is considered a Strongly-Typed View because it has a Model class
+        assigned to it. Views that have a Model assigned to it can retrieve data using the "Model" keyword
+        within the View's template HTML code. This also requires the Controller to pass the model object
+        to the View using the View() method.
+        
+        This View uses three separate Controller methods to handle the processing of this page.
+        The Controller's "DisplayCarInventory" method is used to query the database, create a collection of Cars,
+        and pass the collection of Cars to the View when requesting it via the View() method. Once the View is passed
+        a Model object, it can use it to generate the HTML content for the page before it is delivered to the client.
+        
+        The View uses the Controller's "SearchByMake" method to process the HTML form that is used
+        to perform a search based on the user input for make. The form uses HTTP Post to submit the
+        form data to the Controller's method.
+        
+        The View uses the Controller's "ViewCarDetails" method to process the clicking of a hyperlink to get
+        more detailed information for the Car. The hyperlink is setup to request the Controller's ViewCarDetails, which delivers a View
+        contain the specific car's detailed information. This is accomplished by dynamically generating a hyperlink for each Car
+        that contains a route parameter value that can be used in processing the request. The hyperlink generated for each Car contains
+        the car's VIN number as the hyperlink's route parameter. The hyperlink uses a TagHelper to indicate the Controller,
+        the Controller method to execute, and the route parameter. See the Razor template code below on how to implement this.
+    </h5>
+    <br />
+    <br />
+
+    <form method="POST" action="/users/pascucci/cis3342/CoreApps/Cars/SearchByMake">
+        <input id="make" name="make" type="text" />
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="Search" />
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Nbj_yFII29EpKzrjrMoyghtwJfiPeQKEUHI4EtDEUfNLUXJfAvjlnza5GR1SYntMPrY8VjC20rQxIaVNUmbRrz4TRedhiEy3xlpsgxP-NsOjn9X1Xni84FemZtU9MIZa1Zn8sAD3eVgCCVuzasL3Do" /></form>
+
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Make:</th>
+                <th>Model:</th>
+                <th>Year:</th>
+                <th>Value:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>
+                        Audi
+                    </td>
+                    <td>
+                        Q7
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $68,500.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=AU105"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=AU105"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=AU105"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        BMW
+                    </td>
+                    <td>
+                        535xi
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $56,750.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=B12002"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=B12002"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=B12002"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        BMW
+                    </td>
+                    <td>
+                        740i
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $110,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=B3451"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=B3451"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=B3451"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Chevy
+                    </td>
+                    <td>
+                        Camaro
+                    </td>
+                    <td>
+                        2020
+                    </td>
+                    <td>
+                        $35,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=C205"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=C205"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=C205"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Chevy
+                    </td>
+                    <td>
+                        Suburban
+                    </td>
+                    <td>
+                        2022
+                    </td>
+                    <td>
+                        $18,799.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=C234"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=C234"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=C234"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Dodge
+                    </td>
+                    <td>
+                        Charger Hellcat
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $58,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=DG2233"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=DG2233"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=DG2233"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ford
+                    </td>
+                    <td>
+                        Mustang
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $44,870.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=F106"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=F106"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=F106"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ford
+                    </td>
+                    <td>
+                        Explorer
+                    </td>
+                    <td>
+                        1994
+                    </td>
+                    <td>
+                        $2,500.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=F205"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=F205"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=F205"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ford
+                    </td>
+                    <td>
+                        Explorer
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $38,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=F302"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=F302"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=F302"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        GM
+                    </td>
+                    <td>
+                        Yukon
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $35,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=GMC102"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=GMC102"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=GMC102"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cadillac
+                    </td>
+                    <td>
+                        Escalade
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $85,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=GMC10929"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=GMC10929"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=GMC10929"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        C300
+                    </td>
+                    <td>
+                        2015
+                    </td>
+                    <td>
+                        $18,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB1001"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB1001"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB1001"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        S550 Maybach
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $250,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB123"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB123"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB123"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        S550
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $100,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB2001"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB2001"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB2001"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        GLE350
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $90,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB205"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB205"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB205"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        C300
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $52,750.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB333"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB333"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB333"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        GLS450
+                    </td>
+                    <td>
+                        2024
+                    </td>
+                    <td>
+                        $135,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB3456"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB3456"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB3456"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mercedes-Benz
+                    </td>
+                    <td>
+                        GLE350
+                    </td>
+                    <td>
+                        2020
+                    </td>
+                    <td>
+                        $60,000.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=MB350"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=MB350"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=MB350"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tesla
+                    </td>
+                    <td>
+                        S-Type
+                    </td>
+                    <td>
+                        2023
+                    </td>
+                    <td>
+                        $89,999.00
+                    </td>
+                    <td>
+                        <ul class="list-inline">
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/ViewCarDetails?vin=TES808"> View Details </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/EditCar?vin=TES808"> Edit Car </a> |</li>
+                            <li><a href="/users/pascucci/cis3342/CoreApps/Cars/DeleteCar?vin=TES808"> Delete Car </a> </li>
+                        </ul>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>

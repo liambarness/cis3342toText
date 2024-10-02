@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+    <title>Car Details</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <h1>Car Display Page - Strongly Typed View</h1>
+    <h5>
+        This example demonstrates using a Strongly-Typed View to display a single Car's detailed information.
+        The controller passes a Car object to this View using the View Model approach. Car object's data
+        can be accessed and used by the View through the "Model" keyword. within the View's template HTML code.
+        This also requires the Controller to pass the Model object to the View using the View() method.
+        
+        This View is delivered as the result of processing the Controller's "ViewCarDetails" method. The View doesn't require
+        any processing since it doesn't contain a form or any actions that need further processing by the Controller. This View is
+        simply used to display the details of a single car.
+    </h5>
+    <br />
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Car: </th>
+                <th>VIN:</th>
+                <th>Make:</th>
+                <th>Model:</th>
+                <th>Year:</th>
+                <th>Color:</th>
+                <th>Value:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="https://vehicle-images.dealerinspire.com/c981-11001244/4JGFB4FB7RB136711/b781e30d63f9b4299eea5c579f9ed906.jpg" class="img-thumbnail" />
+                </td>
+                <td>
+                    MB205
+                </td>
+                <td>
+                    Mercedes-Benz
+                </td>
+                <td>
+                    GLE350
+                </td>
+                <td>
+                    2024
+                </td>
+                <td>
+                    Black
+                </td>
+                <td>
+                    $90,000.00
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+

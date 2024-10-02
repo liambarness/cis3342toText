@@ -1,0 +1,57 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <h3>Simple Interest Calculator</h3>
+    <hr />
+    <h3>
+        This example demonstrates processing a form within a Razor View. The form data
+        is submitted using an HTTP Post to a Core MVC Controller. The controller accesses the form data
+        from the Request.Form["key"] collection.
+    </h3>
+    <br />
+
+
+    <form method="post" action="/users/pascucci/cis3342/CoreApps/Financial/CalculateInterest">
+        <div id="divDisplay">Enter the loan amount details: </div>
+      
+        <table>
+            <tr>
+                <td>
+                    <label>Amount:</label>
+                </td>
+                <td>
+                    <input id="txtAmount" name="txtAmount" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Interest Rate:</label>
+                </td>
+                <td>
+                    <input id="txtRate" name="txtRate" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Term in years:</label>
+                </td>
+                <td>
+                    <input id="txtTerm" name="txtTerm" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Calculate Simple Interest">
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Nbj_yFII29EpKzrjrMoygihCOED8qfjQavlxE3X64UOp2WB_PbJK3XaJaiIPlzUq07ZneiWk_7TQGEBGgMt9N4wfO7IUEcuMR1gDXN46aDAWK7UFdoGZeA26lRqgOqKJP1Hq21Vt1h6iFo7K4cryMM" /></form>
+
+</body>
+</html>
